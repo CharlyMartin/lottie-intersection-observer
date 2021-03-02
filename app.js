@@ -39,6 +39,7 @@ function callback(entries) {
   entries.forEach((entry) => {
     const { target, isIntersecting } = entry;
     const animation = animations.find((anim) => anim.wrapper == target);
+    if (!animation) return;
     const { name, animationID } = animation;
 
     if (isIntersecting) {
